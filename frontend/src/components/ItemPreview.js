@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import agent from "../agent";
 import { connect } from "react-redux";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
+import img from "../imgs/placeholder.png";
+import agent from "../agent";
 
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
@@ -19,6 +20,12 @@ const mapDispatchToProps = (dispatch) => ({
 
 const ItemPreview = (props) => {
   const item = props.item;
+  let image = item.image;
+  if (!image) {
+    image = img;
+  } else {
+    image = item.image;
+  }
 
   const handleClick = (ev) => {
     ev.preventDefault();
@@ -36,7 +43,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={item.image}
+        src={image}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
