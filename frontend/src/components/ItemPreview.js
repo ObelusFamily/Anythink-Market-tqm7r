@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import agent from "../agent";
 import { connect } from "react-redux";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
-import img from "../imgs/placeholder.png"
+import img from "../imgs/placeholder.png";
+import agent from "../agent";
 
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
