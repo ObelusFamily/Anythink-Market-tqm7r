@@ -21,8 +21,8 @@ const mapDispatchToProps = (dispatch) => ({
 const ItemPreview = (props) => {
   const item = props.item;
   let image = item.image;
-  if (!image){
-    image = img; 
+  if (!image) {
+    image = img;
   } else {
     image = item.image;
   }
